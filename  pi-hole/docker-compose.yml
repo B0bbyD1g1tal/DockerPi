@@ -1,20 +1,22 @@
 version: "3.7"
 
-# https://github.com/pi-hole/docker-pi-hole/blob/master/README.md
-
 services:
   pihole:
-    container_name: pihole
+    container_name: PiHole
     image: pihole/pihole:latest
-    network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
     environment:
       TZ: 'Europe/Sofia'
-      WEBPASSWORD: p1h0l3
+      WEBPASSWORD: p1_h0l3
+    # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole/:/etc/pihole/'
       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
-      # run `touch ./var-log/pihole.log` first unless you like errors
-      # - './var-log/pihole.log:/var/log/pihole.log'
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
