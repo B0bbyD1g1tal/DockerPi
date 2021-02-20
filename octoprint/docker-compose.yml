@@ -5,6 +5,8 @@ services:
     image: octoprint/octoprint:latest
     container_name: Octoprint
     restart: always
+    env_file:
+      - ./octoprint.env
     environment:
       ENABLE_MJPG_STREAMER: "true"
       MJPG_STREAMER_INPUT: "-y -n -r ${CAMERA_RESOLUTION} -f ${CAMERA_FPS}"
