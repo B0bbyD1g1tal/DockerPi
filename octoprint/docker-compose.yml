@@ -13,7 +13,9 @@ services:
     ports:
       - 80:80
     devices:
-      - ${USB_PORT}:${USB_PORT}
-      - ${CAMERA_DEV}:${CAMERA_DEV}
+      # 3D PRINTER USB
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      # CAMERA USB
+      - /dev/video0:/dev/video0
     volumes:
       - ${OCTOPRINT_DATA}:/octoprint
