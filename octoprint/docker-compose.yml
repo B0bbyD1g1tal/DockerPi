@@ -6,25 +6,8 @@ services:
     container_name: Octoprint
     restart: always
     environment:
-      ####################################
-      # CAMERA
-      ####################################
-      # https://icecat.biz/en/p/logitech/960-000244/webcams-quickcam+s5500-1840109.html
-      # Logitech QuickCam S5500
-      # 1280 x 960 pixels, 30 fps
-      CAMERA_RESOLUTION: 1280x960
-      CAMERA_FPS: 30
       ENABLE_MJPG_STREAMER: "true"
       MJPG_STREAMER_INPUT: "-y -n -r ${CAMERA_RESOLUTION} -f ${CAMERA_FPS}"
-      CAMERA_DEV: /dev/video0
-      ####################################
-      # 3D PRINTER USB PORT
-      ####################################
-      USB_PORT: /dev/ttyUSB0
-      ####################################
-      # DATA VOLUME
-      ####################################
-      OCTOPRINT_DATA: /home/$USER/octoprint_data/
     ports:
       - 80:80
     devices:
