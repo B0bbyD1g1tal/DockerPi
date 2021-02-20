@@ -11,7 +11,7 @@ services:
       # Logitech QuickCam S5500
       # 1280 x 960 pixels, 30 fps
       MJPG_STREAMER_INPUT: "-y -n -r 1280x960 -f 30"
-      OCTOPRINT_DATA: /home/$USER/octoprint_data/
+      OCTOPRINT_DATA: "/home/$USER/octoprint_data/"
     ports:
       - 80:80
     devices:
