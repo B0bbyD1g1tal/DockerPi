@@ -24,7 +24,7 @@ services:
       ####################################
       # DATA VOLUME
       ####################################
-      OCTOPRINT_DATA: /home/$USER/octoprint/
+      OCTOPRINT_DATA: /home/$USER/octoprint_data/
     ports:
       - 80:80
     devices:
