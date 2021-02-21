@@ -2,9 +2,9 @@ version: "3.7"
 
 services:
   pihole:
-    image: pihole/pihole:latest
     container_name: PiHole
-    restart: unless-stopped
+    image: pihole/pihole:latest
+    restart: always
     environment:
       TZ: "Europe/Sofia"
       WEBPASSWORD: p1_h0l3
