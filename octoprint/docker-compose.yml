@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   octoprint:
-    image: octoprint/octoprint:latest
     container_name: Octoprint
+    image: octoprint/octoprint:latest
     restart: always
     environment:
       ENABLE_MJPG_STREAMER: "true"
@@ -14,9 +14,7 @@ services:
     ports:
       - 8080:80
     devices:
-      # 3D PRINTER USB
       - /dev/ttyUSB0:/dev/ttyUSB0
-      # CAMERA USB
       - /dev/video0:/dev/video0
     volumes:
       - /home/$USER/octoprint_data/:/octoprint
