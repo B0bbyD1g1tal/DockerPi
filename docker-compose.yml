@@ -12,7 +12,7 @@ services:
       - 53:53/tcp
       - 53:53/udp
       - 67:67/udp
-      - 8080:80/tcp
+      - 80:80/tcp
       - 443:443/tcp
     volumes:
       - pihole:/etc/pihole/
@@ -30,7 +30,7 @@ services:
       ENABLE_MJPG_STREAMER: "true"
       MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
     ports:
-      - 80:80
+      - 8080:80
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/video0:/dev/video0
