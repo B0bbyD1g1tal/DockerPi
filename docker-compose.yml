@@ -1,23 +1,6 @@
 version: "3.7"
 
 services:
-  # https://github.com/pi-hole/docker-pi-hole
-  pihole:
-    container_name: PiHole
-    image: pihole/pihole:latest
-    restart: always
-    environment:
-      TZ: "Europe/Sofia"
-    ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 67:67/udp
-      - 80:80/tcp
-      - 443:443/tcp
-    volumes:
-      - pihole:/etc/pihole/
-      #- dns:/etc/dnsmasq.d/
-
   # https://github.com/OctoPrint/octoprint-docker
   octoprint:
     container_name: OctoPrint
@@ -37,7 +20,36 @@ services:
     volumes:
       - octoprint:/octoprint
 
+  # https://github.com/pi-hole/docker-pi-hole
+  pihole:
+    container_name: PiHole
+    image: pihole/pihole:latest
+    restart: always
+    environment:
+      TZ: "Europe/Sofia"
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 67:67/udp
+      - 80:80/tcp
+      - 443:443/tcp
+    volumes:
+      - pihole:/etc/pihole/
+      #- dns:/etc/dnsmasq.d/
+
+  code-server:
+    container_name: VSCodeServer
+    image: codercom/code-server
+    restart: always
+    environment:
+      TZ: "Europe/Sofia"
+    ports:
+      - 8443:8443
+    volumes:
+      - code-server:/config
+
 volumes:
   pihole:
   #  dns:
   octoprint:
+  code-server:
