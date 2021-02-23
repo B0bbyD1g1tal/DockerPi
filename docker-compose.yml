@@ -27,7 +27,7 @@ services:
       # Logitech QuickCam S5500
       # 1280 x 960 pixels, 30 fps
       ENABLE_MJPG_STREAMER: "true"
-      #MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
+      MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
     ports:
       - 80:80
     devices:
@@ -35,3 +35,8 @@ services:
       - /dev/video0:/dev/video0
     volumes:
       - octoprint:/octoprint
+
+volumes:
+  pihole:
+#  dns:
+  octoprint:
