@@ -8,7 +8,6 @@ services:
     restart: always
     environment:
       TZ: "Europe/Sofia"
-      WEBPASSWORD: p1_h0l3
     ports:
       - 53:53/tcp
       - 53:53/udp
@@ -16,18 +15,18 @@ services:
       - 8080:80/tcp
       - 443:443/tcp
     volumes:
-      - /home/$USER/pihole/etc-pihole/:/etc/pihole/
-      - /home/$USER/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
+      - pihole:/etc/pihole/
+      #- dns:/etc/dnsmasq.d/
 
   octoprint:
-    container_name: Octoprint
+    container_name: OctoPrint
     image: octoprint/octoprint:latest
     restart: always
     environment:
-      ENABLE_MJPG_STREAMER: "true"
       # https://icecat.biz/en/p/logitech/960-000244/webcams-quickcam+s5500-1840109.html
       # Logitech QuickCam S5500
       # 1280 x 960 pixels, 30 fps
+      ENABLE_MJPG_STREAMER: "true"
       #MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
     ports:
       - 80:80
@@ -35,4 +34,4 @@ services:
       - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/video0:/dev/video0
     volumes:
-      - /home/$USER/octoprint/:/octoprint
+      - octoprint:/octoprint
