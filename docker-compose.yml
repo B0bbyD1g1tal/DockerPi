@@ -13,7 +13,7 @@ services:
       - 53:53/tcp
       - 53:53/udp
       - 67:67/udp
-      - 80:80/tcp
+      - 8080:80/tcp
       - 443:443/tcp
     volumes:
       - /home/$USER/pihole/etc-pihole/:/etc/pihole/
@@ -28,9 +28,9 @@ services:
       # https://icecat.biz/en/p/logitech/960-000244/webcams-quickcam+s5500-1840109.html
       # Logitech QuickCam S5500
       # 1280 x 960 pixels, 30 fps
-      MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
+      #MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
     ports:
-      - 8080:80
+      - 80:80
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/video0:/dev/video0
