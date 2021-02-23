@@ -39,7 +39,7 @@ services:
 
   code-server:
     container_name: VSCodeServer
-    image: codercom/code-server
+    image: linuxserver/code-server
     restart: always
     environment:
       TZ: "Europe/Sofia"
