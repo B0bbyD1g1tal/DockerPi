@@ -37,9 +37,10 @@ services:
       - pihole:/etc/pihole/
       #- dns:/etc/dnsmasq.d/
 
+  # https://github.com/linuxserver/docker-code-server
   code-server:
-    container_name: VSCodeServer
-    image: linuxserver/code-server
+    container_name: CodeServer
+    image: linuxserver/code-server:arm32v7-latest # arm64v8-latest
     restart: always
     environment:
       TZ: "Europe/Sofia"
