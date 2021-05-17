@@ -1,8 +1,8 @@
-SSH=/home/b0bby/.ssh/b0bby_d1g1tal.pub
-SD_MOUNT=/media/b0bby
+# SSH=/home/${HOME}/.ssh/id_ed25519_B0bbyD1g1tal.pub
 
+SD_MOUNT=/media/${HOME}/
 BOOT="${SD_MOUNT}"/system-boot/
-ROOT="${SD_MOUNT}"/writable/
+# ROOT="${SD_MOUNT}"/writable/
 
 touch "${BOOT}"ssh
 cp "$(pwd)"/network-config  "${BOOT}"network-config

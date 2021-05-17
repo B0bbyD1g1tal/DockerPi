@@ -7,10 +7,9 @@ services:
     image: octoprint/octoprint:latest
     restart: always
     environment:
-      # https://icecat.biz/en/p/logitech/960-000244/webcams-quickcam+s5500-1840109.html
-      # Logitech QuickCam S5500
-      # 1280 x 960 pixels, 30 fps
       ENABLE_MJPG_STREAMER: "true"
+      # Logitech QuickCam S5500
+      # https://support.logi.com/hc/en-us/articles/360023307534-QuickCam-Communicate-MP-S5500-Technical-Specifications
       MJPG_STREAMER_INPUT: "-n -r 1280x960 -f 30"
     ports:
       - 8080:80
@@ -28,9 +27,6 @@ services:
     environment:
       TZ: "Europe/Sofia"
     ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 67:67/udp
       - 80:80/tcp
       - 443:443/tcp
     volumes:
@@ -38,19 +34,19 @@ services:
       #- dns:/etc/dnsmasq.d/
 
   # https://github.com/linuxserver/docker-code-server
-  code-server:
-    container_name: CodeServer
-    image: linuxserver/code-server:arm32v7-latest # arm64v8-latest
-    restart: always
-    environment:
-      TZ: "Europe/Sofia"
-    ports:
-      - 8443:8443
-    volumes:
-      - code-server:/config
+#  code-server:
+#    container_name: CodeServer
+#    image: linuxserver/code-server:arm32v7-latest # arm64v8-latest
+#    restart: always
+#    environment:
+#      TZ: "Europe/Sofia"
+#    ports:
+#      - 8443:8443
+#    volumes:
+#      - code-server:/config
 
 volumes:
   pihole:
   #  dns:
   octoprint:
-  code-server:
+#  code-server:

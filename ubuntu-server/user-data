@@ -17,7 +17,7 @@ users:
     ssh-import-id: None
     lock_passwd: true
     ssh-authorized-keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDsW47j0t5BkAeqCwlApL0rsgPOkLMP8RWK0Du59OhqbdiIg6E0+ZKAwUb+gNw135eXPX54Ogk2CU632iXF1Qfeh0S5uSRaYs8zlJLat8RrSSF7Fd1h4mAHoACcFyZkCzgP6VExa01ktJeugu9tG4Za27vTb2UT3DD8WvLNTvmK0VGLIxOQoT6cOE/9XWSt/EtEe2fNaFOKw640Bn3GUomD+E+gsvm54N21vhfHCEvQZNtKEbB6O+1BgYWIYp2o550dF71xygemYDcUAPW83mID8zkKtDV3Bh21lfG2Fb18usm5aVwa5drLFSZ8Oo2MOtezcYkrO8Wlu2en8FV/e3ozO/D6kuoPkiCqpRY20yvOJwiPbcfZcdVn6WajsLQvf4Od3UE8RsZliznmt1jrb4+mIX2HNE40Jp/fZNGv3mEQl8cpA5KZ3QMfVismp6ohPpisfdaDGEVC8EWxefqeQo+PlG1iX80G8Q3W8njkOH2bAbkSzBO7YPRkvZrZhqe3EEEzbNF0hQiJTKyW5MZliALOm68jREDDFHUOHA+z+zbQQCQunFHWfrcfGy4Osw+/zEV0y6XZ/zpCe4LwuUMRs+DVIBL+FqMxpYMQxvH7eA2uBP2ks/gJTOT8I+wG/lLj2U5/5JtU1JxeOEY4HhwvgYFPxWaAdZ066ZJvmLKVITKIDw== B0bbyD1g1tal@protonmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEAQzuNlGx7+brWS9lPih/Y9n2L5TO8QInNFJ6NbPtl1 B0bbyD1g1tal@protonmail.com
 
 # Update apt database and upgrade packages on first boot
 package_update: true
